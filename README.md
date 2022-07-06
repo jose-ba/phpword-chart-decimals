@@ -6,7 +6,7 @@ Para instalar el paquete, hay que modificar el archivo `composer.json` de la ra√
 "autoload": {  
     "exclude-from-classmap": ["vendor/phpoffice/phpword/src/PhpWord/Writer/Word2007/Part/Chart.php"],  
     "classmap": [  
-      {"\\PhpOffice\\PhpWord\\Writer\\Word2007\\Part\\Chart":  "PhpWordReports/Chart.php"}  
+        {"\\PhpOffice\\PhpWord\\Writer\\Word2007\\Part\\Chart":  "vendor/jose-ba/phpword-chart-decimals/Chart.php"}
     ]  
 },
 ``` 
