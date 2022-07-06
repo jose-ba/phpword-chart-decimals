@@ -1,0 +1,11 @@
+{
+    "name": "jose-ba/phpword-chart-decimals",
+    "description": "Add decimals to PHPWord charts",
+    "authors": [
+        {
+            "name": "Jose",
+            "email": "jose1987ba@gmail.com"
+        }
+    ],
+    "require": {}
+}
