@@ -241,7 +241,12 @@ class Chart extends AbstractPart
             // The c:dLbls was added to make word charts look more like the reports in SurveyGizmo
             // This section needs to be made configurable before a pull request is made
             $xmlWriter->startElement('c:dLbls');
-            $xmlWriter->writeElementBlock("c:numFmt",['formatCode'=>'0.00%','sourceLinked'=>'0']);
+
+            if ($style->getDataLabelOptions()['showPercent'] ?? false) {
+                $xmlWriter->writeElementBlock("c:numFmt", ['formatCode' => '0.00%', 'sourceLinked' => '0']);
+            } else {
+                $xmlWriter->writeElementBlock("c:numFmt", ['sourceLinked' => '0']);
+            }
 
 
             foreach ($style->getDataLabelOptions() as $option => $val) {
@@ -300,7 +305,7 @@ class Chart extends AbstractPart
             'xVal' => array('c:xVal', 'c:strLit'),
             'yVal' => array('c:yVal', 'c:numLit'),
         );
-        list($itemType, $itemLit) = $types[$type];
+        [$itemType, $itemLit] = $types[$type];
 
         $xmlWriter->startElement($itemType);
         $xmlWriter->startElement($itemLit);
@@ -339,7 +344,7 @@ class Chart extends AbstractPart
             'cat' => array('c:catAx', 1, 'b', 2),
             'val' => array('c:valAx', 2, 'l', 1),
         );
-        list($axisType, $axisId, $axisPos, $axisCross) = $types[$type];
+        [$axisType, $axisId, $axisPos, $axisCross] = $types[$type];
 
         $xmlWriter->startElement($axisType);
 
