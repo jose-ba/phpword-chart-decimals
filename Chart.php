@@ -245,7 +245,7 @@ class Chart extends AbstractPart
             if ($style->getDataLabelOptions()['showPercent'] ?? false) {
                 $xmlWriter->writeElementBlock("c:numFmt", ['formatCode' => '0.00%', 'sourceLinked' => '0']);
             } elseif($style->getDataLabelOptions()['showVal'] ?? false) {
-                $xmlWriter->writeElementBlock("c:numFmt", ['sourceLinked' => '0']);
+                $xmlWriter->writeElementBlock("c:numFmt", ['formatCode' => '0', 'sourceLinked' => '0']);
             }
 
 
